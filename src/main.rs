@@ -47,7 +47,7 @@ struct LastData {
     baromrelin: f64,
     baromabsin: f64,
     tempf: f64,
-    battout: f32,
+    battout: i8,
     humidity: f64,
     winddir: i16,
     windspeedmph: f64,

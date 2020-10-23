@@ -10,43 +10,10 @@ pub struct Device {
     #[serde(rename = "macAddress")]
     mac_address: String,
     #[serde(rename = "lastData")]
-    last_data: LastData,
-    info: Info,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Info {
-    name: String,
-    coords: InfoCoords,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct InfoCoords {
-    coords: CoordsCoords,
-    address: String,
-    location: String,
-    elevation: f64,
-    geo: Geo,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct CoordsCoords {
-    lon: f64,
-    lat: f64,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Geo {
-    #[serde(rename = "type")]
-    geo_type: String,
-    coordinates: Vec<f64>,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct LastData {
-  #[serde(flatten)]
-  #[serde(rename = "lastData")]
-  last_data: HashMap<String, Value>,
+    #[serde(flatten)]
+    last_data: HashMap<String, Value>,
+    #[serde(flatten)]
+    info: HashMap<String, Value>,
 }
 
 #[tokio::main]

@@ -1,6 +1,4 @@
-extern crate serde_derive
-
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 use reqwest::Error;
 
 pub type Devices = Vec<Device>;
